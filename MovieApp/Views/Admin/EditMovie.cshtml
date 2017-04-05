@@ -1,0 +1,33 @@
+﻿@model MovieApp.Models.Movies
+@{
+    ViewBag.Title = "Edit Movie";
+}
+
+<h2>Edit Movie</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Title: </td>
+            <td>@Html.TextBoxFor(movies => movies.Title, new { @Value = Model.Title })</td>
+        </tr>
+        <tr>
+            <td>Picture: </td>
+            <td>@Html.TextBoxFor(movies => movies.Picture, new { @Value = Model.Picture })</td>
+        </tr>
+        <tr>
+            <td>Release Year: </td>
+            <td>@Html.TextBoxFor(movies => movies.Release_Year, new { @Value = Model.Release_Year })</td>
+        </tr>
+        <tr>
+            <td>Description: </td>
+            <td>@Html.TextBoxFor(movies => movies.Description, new { @Value = Model.Description})</td>
+        </tr>
+        <tr>
+            <td>Category: </td>
+            <td>@Html.TextBoxFor(movies => movies.Category_ID, new { @Value = Model.Category_ID})</td>
+        </tr>
+    </table>
+    <input type="submit" value="Save Changes" />
+}

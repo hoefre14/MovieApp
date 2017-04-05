@@ -1,0 +1,37 @@
+﻿@model MovieApp.Models.Movies
+@{
+    ViewBag.Title = "RegisterMovie";
+}
+
+<h2>Register Movie</h2>
+@{
+    // Kunne vært i main Layout for å få gjennom alle sidene
+    String username = (String)Session["LoggetInn"];
+
+    <p>Velkommen @username, du er logget på som administrator.</p>
+}
+
+@using (Html.BeginForm("RegisterNewMovie", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <lablel>
+        Title
+        @Html.TextBoxFor(movies => movies.Title)
+    </lablel><br />
+    <label>
+        Picture
+        <input type="file" name="file" />
+    </label><br />
+    <label>
+        Release_Year
+        @Html.TextBoxFor(movies => movies.Release_Year)
+    </label><br />
+    <label>
+        Description
+        @Html.TextBoxFor(movies => movies.Description)
+    </label><br />
+    <label>
+        Category_ID
+        @Html.TextBoxFor(movies => movies.Category_ID)
+    </label>
+    <input type="submit" value="Lagre Jedi" />
+}

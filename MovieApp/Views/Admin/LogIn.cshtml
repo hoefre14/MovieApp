@@ -1,0 +1,44 @@
+﻿@model MovieApp.Models.Users
+@{
+    ViewBag.Title = "Log in to our movie website";
+}
+
+<h2>LogIn</h2>
+
+@using (Html.BeginForm())
+{
+    <label>
+        First_Name
+        @Html.TextBoxFor(users => users.First_Name)
+    </label><br />
+    <label>
+        Last_Name
+        @Html.TextBoxFor(users => users.Last_Name)
+    </label><br />
+    <label>
+        Username
+        @Html.TextBoxFor(users => users.Username)
+    </label><br />
+    <label>
+        Age
+        @Html.TextBoxFor(users => users.Age)
+    </label><br />
+
+    <input type="submit" value="Log in" />
+}
+
+
+@{
+    if (ViewBag.LoggetInn != null)
+    {
+        if (ViewBag.LoggetInn == true)
+        {
+            <p>You have logged in sucsessfully :)</p>
+        }
+        else
+        {
+            <p>Username is wrong!</p>
+        }
+    }
+}
+

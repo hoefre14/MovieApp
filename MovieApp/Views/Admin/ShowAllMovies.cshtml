@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MovieApp.Models.Movies>
+@{
+    ViewBag.Title = "Show all movies";
+}
+
+<h2>Show all movies</h2>
+<p>Number of movies in our system: @Model.Count()</p>
+
+@foreach (var movies in Model)
+{
+    <article>
+        <h3>@movies.Title</h3>
+        <img src="~/Bilder/@movies.Picture" alt="@movies.Picture" />
+        <h3>@movies.Release_Year , @movies.Category_ID</h3>
+        <h4>@movies.Description</h4>
+    </article>
+}
