@@ -39,7 +39,7 @@ namespace MovieApp.Controllers
             {
                 ViewBag.LoggetInn = false;
             }
-            return View();
+            return RedirectToAction("ShowAllMovies");
         }
 
         public ActionResult ShowAllMovies()
