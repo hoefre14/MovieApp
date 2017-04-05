@@ -131,6 +131,8 @@
     <Content Include="App_Data\MovieDB_log.ldf">
       <DependentUpon>MovieDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Css\main-layout.css" />
+    <Content Include="Css\MeyersReset.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\MovieORM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
